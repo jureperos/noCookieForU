@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "NoCookieForU",
+    "version": "1.0",
+    "description": "This extension rejects or accepts cookie policies for you",
+    "action": {
+        "default_popup": "nocookie.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["main.js"]
+        }
+    ]
+}
