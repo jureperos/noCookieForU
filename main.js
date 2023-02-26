@@ -1,12 +1,17 @@
-
+sayNoArr = [/zavrni.*/ig, /reject.*/ig]
 findCookieButton(document.body)
 
 function findCookieButton(element) {
 
     if (element.tagName === "BUTTON") {
-        if (element.lastChild.innerText === "Button 1" || element.innerText === "Button 1") {
-            element.style.color = "red"
-            element.style.backgroundColor = "green"
+        console.log(element)
+        const innerText = element.lastChild.innerText || element.innerText
+        
+        const textMatch = sayNoArr.map(regex => innerText.match(regex))
+        console.log(textMatch)
+        if (textMatch.some(element => element !== null)) {
+            element.click();
+            alert('cookies denied')
         }
     } else if (element.tagName !== "BUTTON") {
         element.childNodes.forEach(findCookieButton)
