@@ -7,7 +7,6 @@ setTimeout(() => {
 function findCookieButton(element) {
 
     if (element.tagName === "BUTTON") {
-        console.log(element)
         const innerText = element.lastChild.innerText || element.innerText
         
         const textMatch = sayNoArr.map(regex => innerText.match(regex))
