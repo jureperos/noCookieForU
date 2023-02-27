@@ -1,5 +1,8 @@
 sayNoArr = [/zavrni.*/ig, /reject.*/ig]
-findCookieButton(document.body)
+
+setTimeout(() => {
+    findCookieButton(document.body)
+}, 4000)
 
 function findCookieButton(element) {
 
